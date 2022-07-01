@@ -1,0 +1,23 @@
+.box-whatsApp {
+    background-color: green;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+    transition: transform .5s ease;
+}
+
+.box-whatsApp i {
+    color: #fff;
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.box-whatsApp:hover{
+    transform: scale(1.2);
+}

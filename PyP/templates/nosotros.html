@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block css %}
+  <!-- CSS y titulo -->
+  <link rel="stylesheet" href="{% static '../static/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/estilo-nosotros.css' %}">
+  <title>Sobre Nosotros</title>
+{% endblock %}
+
+{% block contenido %}  
+  <!--CONTENIDO --> 
+    <div class="container">       
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-inner" >
+           <div class="carousel-item active">
+             <img src="{% static '../static/img/carrusel/Mascotas/Mascotas3.jpg'%}" class="d-block" alt="...">
+
+           </div>
+           <div class="carousel-item">
+             <img src="{% static '../static/img/carrusel/Mascotas/Mascotas2.jpg'%}" class="d-block" alt="...">
+
+           </div>
+           <div class="carousel-item">
+            <img src="{% static '../static/img/carrusel/Mascotas/Mascotas4.jpg'%}" class="d-block" alt="...">
+          </div>
+         </div>
+       </div>     
+   </div>
+   <hr>
+   <div class="container">
+    <div class="row">
+      <div class="col-6 cont-text">
+        <h2>Sobre nosotros!</h2>
+        <p>Somos tu tienda dedicada número en mantener contentos y satisfechos a tus amigos peludos, contamos con delivery y atención a domicilio. Nuestro enfoque es el bienestar de tus mascotas, todo nuestro personal trabaja en función del mejor servicio de atención a ti y a tus compañeros.</p>
+        <p>Nuestro compromiso es brindar entretención, salud, nutrición y bienestar a los mas altos estándares y a los mejores precios.</p>
+        <div>
+          <img src="{% static '../static/img/nosotros/patita.png'%}" class="rounded float-end patita " alt="">
+        </div>
+      </div>  
+      <div class="col-6 cont-img ">
+        <img src="{% static '../static/img/nosotros/aboutus.png'%}" class="mx-auto d-block" alt="">
+      </div>
+    </div>
+   </div> 
+
+    
+    <!--FIN CONTENIDO -->
+{% endblock %}
+
+{% block js %}
+  <!-- JS BOOSTRAP -->
+  <script src="{% static '../static/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+{% endblock %}

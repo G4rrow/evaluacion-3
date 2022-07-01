@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap');
+
+body{
+    background: rgb(239, 193, 118);
+}
+/**Carrusel**/
+.carousel-caption{
+    background: rgba(239, 193, 118, 0.5);
+    border-radius:20px ;
+    color: rgb(0, 0, 0);
+}
+
+#caja-carrusel{
+    height: 300px;
+    width: 500px ;
+}
+
+.carousel{
+    padding: 10px;
+}
+
+.carousel-inner{
+    box-shadow: 0 0 0 10px #efc076;
+    width: 100;
+    border-radius: 10px;
+}
+
+
+.carousel-item img{
+    width: 100%;
+    height: 500px;
+}
+/**Carrusel**/
+
+
+.cont-text{
+    padding: 10px;
+    outline: rgb(0, 0, 0) solid 3px;
+    margin-bottom: 10px;
+
+}
+
+.cont-img{
+    padding: 20px;
+    
+}
+.cont-img img{
+    border-radius: 50%;
+    width: 500px;
+}
+
+.patita{
+    width: 150px;
+}

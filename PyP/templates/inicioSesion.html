@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+
+{% block css %}
+  <!-- CSS y titulo -->
+  <link rel="stylesheet" href="{% static '../static/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/estilo-inicioSecion.css' %}">
+  <title>Inicio de Sesion</title>
+{% endblock %}
+
+{% block contenido %}
+
+
+    <!--CONTENIDO --> 
+    <div class="body text-center">
+        <main class="form-signin">
+            <form id="form-login" action="" method="post">
+                <img class="mb-2 img-login" src="{% static '../static/img/login/login.svg'%}" alt="imagen-login">
+                <h1 class="h3 mb-1 fw-normal">Inicio de Sesión</h1>
+
+                <div class="mb-1">
+                  <label for="correo" class="form-label">Ingrese correo:</label>
+                  <input type="email" class="form-control" id="correo" name="correo" placeholder="correo@correo.cl">
+                </div>
+                <div class="mb-1">
+                  <label for="contraseña" class="form-label">Ingrese Contraseña:</label>
+                  <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="contraseña">
+                </div>
+                <input class="w-100 btn btn-lg btn-primary mt-3" type="submit" value="Ingresar">
+                <p class="mt-3 text-muted">&copy; 2021–2022</p>
+            </form>
+        </main>
+    </div>
+    <!--FIN CONTENIDO -->
+
+    {% endblock %}
+ 
+    {% block js %}
+          <!-- JS BOOSTRAP -->
+          <script src="{% static '../static/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+        
+          <!--js validador-->
+          <script src="{% static '../static/js/login.js'%}"></script>
+
+
+    {% endblock %}    

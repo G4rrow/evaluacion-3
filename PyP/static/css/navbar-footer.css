@@ -1,0 +1,66 @@
+:root{
+    --primario : #FFFFFF;
+    --secundario: #F9F6F7;
+    --terciario : #46B193;
+    --cuarto: #F75A61;
+    --quinto:#ff7310d4;
+}
+
+
+
+/* NAVBAR */
+nav.navbar{
+    background-color: var(--quinto);
+    padding: 10px;
+}
+
+
+/* PIE DE PAGINA */
+
+footer{
+    background-color: var(--quinto);
+    display: flex;
+    justify-content: space-around;
+}
+
+footer > div{
+    flex: 1;
+}
+
+.footer-titulo{
+    margin: 15px auto;
+    color: var(--primario);
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+div.footer-contenido{
+   text-align: center; 
+   color: var(--primario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p.contenido-info{
+    font-weight: 100;
+}
+
+i{
+    font-size: 30px;  
+}
+
+.fa-facebook{
+    color: blue;
+}
+
+.fa-instagram-square{
+    color: #fff;
+}
+.fa-tiktok{
+    color: #000;
+}

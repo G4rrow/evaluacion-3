@@ -1,0 +1,77 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+
+{% block css %}
+  <!-- CSS y titulo -->
+  <link rel="stylesheet" href="{% static '../static/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/estilo-contacto.css' %}">
+  <title>Contactanos!</title>
+{% endblock %}
+
+{% block contenido %}
+
+
+    <!--CONTENIDO-->
+    <div class="container">
+      <div class="row mt-3 mb-3">
+            <div class="col-4 me-3 contenedor-formulario">
+              <div class="caja-imagen">
+                <img class="img-contacto" src="{% static '../static/img/contacto/ct2.jpg'%}" alt="">
+              </div>
+              
+                
+                <form id="form-contacto" class="row mt-4 " method="POST">
+                  <div class="col-6 mb-3">
+                    <label for="nombre" class="form-label">Nombre *</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="apellido" class="form-label">Apellido *</label>
+                    <input type="text" class="form-control" name ="apellido" id="apellido" placeholder="Apellido">
+                  </div>
+                  <div class="mb-3">
+                    <label for="emailinput" class="form-label">Email *</label>
+                    <input type="email" class="form-control" name="emailinput" id="emailinput" placeholder="name@example.com">
+                  </div>          
+                  <div class="col-12 mb-3">
+                    <label for="asunto" class="form-label">Asunto * </label>
+                    <input type="text" class="form-control" name="asunto" id="asunto" placeholder="Asunto">
+                  </div>                              
+                  <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripcion *</label>
+                    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                  </div>
+                  <div>
+                    <input class="btn btn-primary mb-3" type="submit" value="Enviar">
+                  </div>
+
+
+                </form>
+              </div>
+              <!--Aqui se ingresara el mapa-->
+              <div class="col-7">
+                <h1></h1>
+                <div class="mb-3" id="map"> </div>
+              </div>            
+      </div>     
+    </div>
+    <!--FIN Contenido-->
+
+{% endblock %}
+ 
+{% block js %}
+      <!-- JS BOOSTRAP -->
+      <script src="{% static '../static/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    
+      <!--Api-->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGLCIu_l7nTrDn_4tIAZS5I0GGBI9tFNM&callback=iniciarMap&v=weekly"defer></script>
+      <script src="{% static '../static/js/mapi.js'%}"></script> 
+     
+      <!--js validador-->
+      <script src="{% static '../static/js/contacto.js'%}"></script>
+{% endblock %}    

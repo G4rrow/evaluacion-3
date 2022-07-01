@@ -1,0 +1,123 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+
+{% block css %}
+  <!-- CSS y titulo -->
+  <link rel="stylesheet" href="{% static '../static/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '../static/css/estilo-servicios.css' %}">
+  <title>Servicios</title>
+{% endblock %}
+
+{% block contenido %}
+
+  <!--CONTENIDO -->
+  <div class="container mt-5">
+    <div class="row cajita">
+      <div class="col-6 cont-text">
+        <h3>PELUQUERIA Y CORTE DE UÑAS</h3>
+        <p>Realizamos servicios de peluqueria y corte de pelo sin importar el tamaño de tu peludo. Utilizamos articulos de la mas alta calidad y los cortes se realizan con el mayor cuidado posible para evitar lastimar a tu compañero.</p>
+        <h6>HORARIOS DE ATENCIÓN</h6>
+        <ul>
+          <li>Lunes y Martes 10:00 a 17:00 horas.</li>
+          <li>Viernes y Sabado 12:00 a 20:00 horas.</li>
+        </ul>
+        <h6>HORARIOS DE ATENCIÓN A DOMICILIO</h6>
+        <ul>
+          <li>Lunes a Viernes 10:00 a 16:00 horas.</li>
+        </ul>
+        <p id="terms">*Consulta valores y agenda tu hora a traves de nuestro whatsapp o formulario de contacto. <br>*Valores pueden variar dependiendo del tamaño del cliente.</p>
+        <p></p>
+
+      </div>  
+      
+      <div class="col-6 cont-img ">
+        <img src="{% static '../static/img/servicios/cortepelo.jpg'%}" class="mx-auto d-block" alt="">
+      </div>
+    </div>
+
+    <div class="row cajita mt-5">
+      <div class="col-6 cont-img ">
+        <img src="{% static '../static/img/servicios/baño.jpg'%}" class="mx-auto d-block" alt="">
+      </div>
+      <div class="col-6 cont-text">
+        <h3>BAÑOS DESPARASITANTES</h3>
+        <p>Todos nuestros baños se realizan con articulos de Ph neutro para evitar alergias para luego aplicar desparasitantes , de esta forma tus peludos estaran protegidos de infecciones y enfermedades que puedan transmitirse a traves de picaduras de pulgas y garrapatas. </p>
+        <h6>HORARIOS DE ATENCIÓN</h6>
+        <ul>
+          <li>lunes a Jueves de 12:00 a 18:00 horas.</li>
+          <li>Sabado y Domingo de 10:00 a 17:00 horas.</li>
+        </ul>
+        <h6>HORARIOS DE ATENCIÓN A DOMICILIO</h6>
+        <ul>
+          <li>Lunes a Viernes de 10:00 a 16:00 horas.</li>
+
+        </ul>
+        <p id="terms">*Consulta valores y agenda tu hora a traves de nuestro whatsapp o formulario de contacto. <br>*Valores pueden variar dependiendo del tamaño y raza del cliente.</p>
+        <p></p>
+
+      </div>  
+    </div>
+
+    <div class="row cajita mt-5">
+      <div class="col-6 cont-text">
+        <h3>CONSULTA VETERINARIA</h3>
+        <p>Contamos con antencion veterinaria para consultas de mediana complejidad (No se realizan cirugias). Si te preocupa el comportamiento de tu mascota o sospechas de alguna enfermedad podemos ayudarte a diagnosticarlo</p>
+        <h6>HORARIOS DE ATENCIÓN SUCURSAL</h6>
+        <ul>
+          <li>Lunes a Viernes 10:00 a 20:00 horas.</li>
+        </ul>
+        <h6>HORARIOS DE ATENCIÓN A DOMICILIO</h6>
+        <ul>
+          <li>Lunes a Miercoles 10:00 a 18:00 horas.</li>
+        </ul>
+        <p id="terms">*Consulta valores y agenda tu hora a traves de nuestro whatsapp o formulario de contacto. <br>*Valores pueden variar dependiendo del tamaño del cliente.</p>
+        <p></p>
+
+      </div>  
+      <div class="col-6 cont-img ">
+        <img src="{% static '../static/img/servicios/consultavet.jpg'%}" class="mx-auto d-block" alt="">
+      </div>
+    </div>
+  </div>
+    <!-- TRABAJADORES -->
+    <div class="titulo">
+      Nuestros trabajadores
+    </div>
+
+    <section class="pt-2 pb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div id="carrusel-trabajadores" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" id="carrusel-items">
+                <!-- inserción jquery -->
+              </div>
+            </div>
+          </div>
+          <div class="col-12 btn-control">
+            <a class="btn btn-primary mb-3 mr-1" role="button" data-bs-target="#carrusel-trabajadores"
+              data-bs-slide="prev">
+              <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="btn btn-primary mb-3" role="button" role="button" data-bs-target="#carrusel-trabajadores"
+              data-bs-slide="next">
+              <i class="fa fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FIN TRABAJADORES -->
+  
+  <!--FIN CONTENIDO -->
+{% endblock %}
+ 
+{% block js %}
+  <!-- JS BOOSTRAP -->
+  <script src="{% static '../static/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="{% static '../static/js/js-servicios.js'%}"></script>
+{% endblock %}

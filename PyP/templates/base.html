@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{% static '../IMG/logo.png'%}">
+  <!-- BOOSTRAP -->
+  <link rel="stylesheet" href="{% static '../static/bootstrap/css/bootstrap.min.css'%}">
+  <!-- FONT AWEOSOME-->
+  <script src="https://kit.fontawesome.com/80eba68d1d.js" crossorigin="anonymous"></script>
+
+  {% block css%}
+
+  {% endblock %}
+</head>
+
+<body>
+  <!-- WhatsApp-->
+  <a href="https://wa.me/+56974299883" target="_blank">
+    <div class="box-whatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+  </a>
+  <!-- FIN WhatsApp-->
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Peludos y Pulgosos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'servicios' %}">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'nosotros' %}">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+          </li>
+        </ul>
+
+        <div class="d-flex">
+          <a href="{% url 'login' %}" class="btn btn-warning">Iniciar Sesión</a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+  <!-- FIN MENÚ -->
+
+    <!--CONTENIDO -->
+    {% block contenido %}
+
+    {% endblock %}
+
+    <!--FIN CONTENIDO -->
+
+  <!--PIE DE PAGINA -->
+  <footer class="footer">
+    <div class="sucursales">
+      <div class="footer-titulo">
+        <div>Surcusal y horarios</div>
+      </div>
+      <div class="footer-contenido">
+        <p class="contenido-info">
+          La Estrella 1059, Pudahuel - Lunes a Domingo de 10:00 a 20:00 Horas.
+        </p>
+      </div>
+    </div>
+    <div class="contacto">
+      <div class="footer-titulo">
+        Contacto
+      </div>
+      <div class="footer-contenido">
+
+        <p class="contenido-info">
+          Llamadas: +56 9 5000 4842
+        </p>
+        <p class="contenido-info">
+          WhatsApp: +56 9 5000 8898
+        </p>
+        <p class="contenido-info">
+          Correo: info@tusmascotas.cl
+        </p>
+      </div>
+
+    </div>
+
+    <div class="redes">
+      <div class="footer-titulo">
+        Redes Sociales
+      </div>
+      <div class="footer-contenido">
+        <p class="contenido-info">
+          <a href="#" class="red"><i class="fa-brands fa-facebook"></i></a>
+        </p>
+        <p class="contenido-info">
+          <a href="#" class="red"><i class="fa-brands fa-instagram-square"></i></a>
+        </p>
+        <a class="contenido-info">
+          <a href="#" class="red"><i class="fa-brands fa-tiktok"></i> </a>
+          </p>
+      </div>
+    </div>
+
+  </footer>
+  <!-- FIN PIE DE PAGINA -->
+
+  {% block js %}
+  {% endblock %}
+
+
+</body>
+
+</html>

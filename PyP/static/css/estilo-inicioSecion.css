@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap');
+
+div.body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: rgb(239, 193, 118);
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+  
+.img-login{
+    width: 250px;
+    height: 250px;
+}
+
+.form-floating{
+    margin: 20px;
+}
+
+input.error, textarea.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+}
+
+label {
+    width: 300px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+  
+label.error {
+    color: red;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+}
