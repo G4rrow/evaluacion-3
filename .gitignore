@@ -1,0 +1,6 @@
+.vscode
+
+/__pychache__/
+/migrations/
+
+evaluacion3/settings.py
