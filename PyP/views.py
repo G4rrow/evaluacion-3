@@ -12,10 +12,7 @@ def servicios(request):
     return render(request, 'servicios.html')
 
 def contacto(request):
-    return render(request, 'contacto.html')    
-    
-def inicioSesion(request):
-    return render(request, 'inicioSesion.html')
+    return render(request, 'contacto.html')
 
 def nosotros(request):
     return render(request, 'nosotros.html')

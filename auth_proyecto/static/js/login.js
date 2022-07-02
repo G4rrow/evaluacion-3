@@ -2,21 +2,19 @@ $(document).ready(function() {
 
     $("#form-login").validate({
         rules:{
-            correo:{
+            username:{
                 required:true,
-                email:true
             },
-            contraseña:{
+            password:{
                 required:true,
                 minlength:3
             }
         },
         messages:{
-            correo:{
-                required:"Debe ingresar un correo",
-                email:"Debe ingresar un correo valido!"
+            username:{
+                required:"Debe ingresar un nombre de usuario",
             },
-            contraseña:{
+            password:{
                 required:"Debe ingresar una contraseña",
                 minlength:"Contraseña invalida!"
             }

@@ -14,7 +14,16 @@ nav.navbar{
     padding: 10px;
 }
 
+div.logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 #logout{
+    display: block;
+    margin-top: 5px;
     text-decoration: none;
     color:red;
 }
@@ -22,6 +31,7 @@ nav.navbar{
 #logout > i{
     font-size: 20px;
 }
+
 
 /* PIE DE PAGINA */
 

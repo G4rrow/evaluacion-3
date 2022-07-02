@@ -12,6 +12,7 @@ def auth_login(request):
 	data = {}
 	logout(request)
 	username = password = ''
+	
 	if request.POST:
 		username = request.POST['username']
 		password = request.POST['password']

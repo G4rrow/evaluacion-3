@@ -1,4 +1,5 @@
 .vscode
-*.pyc
-**/settings.py
+__pycache__/
+*pyc
+settings.py
 migrations/
