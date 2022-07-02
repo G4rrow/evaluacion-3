@@ -5,9 +5,9 @@
 
 {% block css %}
   <!-- CSS y titulo -->
-  <link rel="stylesheet" href="{% static '../static/css/navbar-footer.css' %}">
-  <link rel="stylesheet" href="{% static '../static/css/estilo-whatsapp.css' %}">
-  <link rel="stylesheet" href="{% static '../static/css/estilo-inicioSecion.css' %}">
+  <link rel="stylesheet" href="{% static '/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-inicioSecion.css' %}">
   <title>Inicio de Sesion</title>
 {% endblock %}
 
@@ -18,7 +18,7 @@
     <div class="body text-center">
         <main class="form-signin">
             <form id="form-login" action="" method="post">
-                <img class="mb-2 img-login" src="{% static '../static/img/login/login.svg'%}" alt="imagen-login">
+                <img class="mb-2 img-login" src="{% static '/img/login/login.svg'%}" alt="imagen-login">
                 <h1 class="h3 mb-1 fw-normal">Inicio de Sesión</h1>
 
                 <div class="mb-1">
@@ -40,12 +40,12 @@
  
     {% block js %}
           <!-- JS BOOSTRAP -->
-          <script src="{% static '../static/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+          <script src="{% static '/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
         
           <!--js validador-->
-          <script src="{% static '../static/js/login.js'%}"></script>
+          <script src="{% static '/js/login.js'%}"></script>
 
 
     {% endblock %}    

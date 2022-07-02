@@ -5,9 +5,9 @@
 
 {% block css %}
   <!-- CSS y titulo -->
-  <link rel="stylesheet" href="{% static '../static/css/navbar-footer.css' %}">
-  <link rel="stylesheet" href="{% static '../static/css/estilo-whatsapp.css' %}">
-  <link rel="stylesheet" href="{% static '../static/css/estilo-contacto.css' %}">
+  <link rel="stylesheet" href="{% static '/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-contacto.css' %}">
   <title>Contactanos!</title>
 {% endblock %}
 
@@ -19,7 +19,7 @@
       <div class="row mt-3 mb-3">
             <div class="col-4 me-3 contenedor-formulario">
               <div class="caja-imagen">
-                <img class="img-contacto" src="{% static '../static/img/contacto/ct2.jpg'%}" alt="">
+                <img class="img-contacto" src="{% static '/img/contacto/ct2.jpg'%}" alt="">
               </div>
               
                 
@@ -64,14 +64,14 @@
  
 {% block js %}
       <!-- JS BOOSTRAP -->
-      <script src="{% static '../static/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+      <script src="{% static '/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
     
       <!--Api-->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGLCIu_l7nTrDn_4tIAZS5I0GGBI9tFNM&callback=iniciarMap&v=weekly"defer></script>
-      <script src="{% static '../static/js/mapi.js'%}"></script> 
+      <script src="{% static '/js/mapi.js'%}"></script> 
      
       <!--js validador-->
-      <script src="{% static '../static/js/contacto.js'%}"></script>
+      <script src="{% static '/js/contacto.js'%}"></script>
 {% endblock %}    

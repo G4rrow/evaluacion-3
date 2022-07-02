@@ -22,7 +22,7 @@ def auth_login(request):
 		if user is not None:
 			if user.is_active:
 				login(request,user)
-				return redirect('pyp:home')
+				return redirect('pyp:index')
 			else:
 				messages.error(
 					request,

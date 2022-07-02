@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="{% static '../IMG/logo.png'%}">
+  <link rel="icon" href="{% static '/img/logo.png'%}">
   <!-- BOOSTRAP -->
-  <link rel="stylesheet" href="{% static '../static/bootstrap/css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css'%}">
   <!-- FONT AWEOSOME-->
   <script src="https://kit.fontawesome.com/80eba68d1d.js" crossorigin="anonymous"></script>
 
@@ -28,7 +28,7 @@
   <!-- MENÚ DE NAVEGACIÓN -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'index' %}">Peludos y Pulgosos</a>
+      <a class="navbar-brand" href="{% url 'pyp:index' %}">Peludos y Pulgosos</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,27 +36,27 @@
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+            <a class="nav-link" aria-current="page" href="{% url 'pyp:index' %}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'servicios' %}">Servicios</a>
+            <a class="nav-link" href="{% url 'pyp:servicios' %}">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'nosotros' %}">Sobre Nosotros</a>
+            <a class="nav-link" href="{% url 'pyp:nosotros' %}">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+            <a class="nav-link" href="{% url 'pyp:contacto' %}">Contacto</a>
           </li>
         </ul>
 
         {% if request.user.is_authenticated %}
-        <div class="d-flex">
-          <p> {{request.user.first_name}} </p>
-          <a href="{% url 'auth:logout' %}"><i class="fas fa-sign-out-alt"></i></a>
+        <div class="d-flex logout">
+          <div> {{request.user.first_name}} | 
+          <a href="{% url 'auth:logout' %}" id="logout"><i class="fas fa-sign-out-alt"></i></a></div>
         </div>
         {% else %}
           <div class="d-flex">
-            <a href="{% url 'login' %}" class="btn btn-warning">Iniciar Sesión</a>
+            <a href="{% url 'auth:login' %}" class="btn btn-warning">Iniciar Sesión</a>
           </div>
         {% endif %}
 

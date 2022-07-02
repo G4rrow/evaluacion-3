@@ -14,6 +14,14 @@ nav.navbar{
     padding: 10px;
 }
 
+#logout{
+    text-decoration: none;
+    color:red;
+}
+
+#logout > i{
+    font-size: 20px;
+}
 
 /* PIE DE PAGINA */
 
