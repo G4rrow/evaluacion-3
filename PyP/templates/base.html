@@ -49,9 +49,12 @@
           </li>
         </ul>
 
-        <div class="d-flex">
-          <a href="{% url 'login' %}" class="btn btn-warning">Iniciar Sesión</a>
-        </div>
+        {% if request.user.is_authenticated %}
+        {% else %}
+          <div class="d-flex">
+            <a href="{% url 'login' %}" class="btn btn-warning">Iniciar Sesión</a>
+          </div>
+        {% endif %}
 
       </div>
     </div>
