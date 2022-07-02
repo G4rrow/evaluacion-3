@@ -50,6 +50,10 @@
         </ul>
 
         {% if request.user.is_authenticated %}
+        <div class="d-flex">
+          <p> {{request.user.first_name}} </p>
+          <a href="{% url 'auth:logout' %}"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
         {% else %}
           <div class="d-flex">
             <a href="{% url 'login' %}" class="btn btn-warning">Iniciar Sesión</a>
