@@ -1,0 +1,7 @@
+a.action > i{
+    font-size: 15px;
+}
+
+a.action > i:hover{
+    transform: scale(1.2);
+}

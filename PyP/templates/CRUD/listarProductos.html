@@ -6,16 +6,22 @@
   <!-- CSS y titulo -->
   <link rel="stylesheet" href="{% static '/css/navbar-footer.css' %}">
   <link rel="stylesheet" href="{% static '/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-listarProductos.css' %}">
   <title>Listar de productos</title>
 {% endblock %}
 
 {% block contenido %}
     
     <div class="container">
-        <div class="row mt-5 mb-5">
+        <div class="row mt-5">
             <div class="col-12">
                 <h2>Lista de productos</h2>
                 <hr/>
+            </div>
+        </div>
+        <div class="row mt-1 mb-1">
+            <div class="col-12">
+                <a class="btn btn-success action" href="{% url 'pyp:agregarProducto' %}"><i class="fa-solid fa-circle-plus"></i></a>
             </div>
         </div>
 
@@ -24,11 +30,13 @@
                 <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Favorito</th>
-                        <th scope="col">Categoria</th>
+                        <th>Codigo</thscope=>
+                        <th>Nombre</thscope=>
+                        <th>Precio</thscope=>
+                        <th>Favorito</th>
+                        <th>Categoria</th>
+                        <th>Opciones</th>
+                        <th>
                       </tr>
                     </thead>
                     <tbody>
@@ -39,6 +47,10 @@
                                 <td>{{ producto.precio }}</td>
                                 <td>{{ producto.favorito }}</td>
                                 <td>{{ producto.categoria.nombreCategoria }}</td>
+                                <td>
+                                    <a class="btn btn-warning action" href="#"><i class="fa-solid fa-file-pen"></i></a>
+                                    <a class="btn btn-danger action" href="#"><i class="fa-solid fa-trash"></i></a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>

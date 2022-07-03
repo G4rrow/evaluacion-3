@@ -1,0 +1,7 @@
+i.fas{
+    font-size: 18px;
+}
+
+:is(button[type="submit"],a.btn){
+    font-size: 18px;
+}

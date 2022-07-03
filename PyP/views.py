@@ -1,10 +1,11 @@
 from urllib import request
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import (
     Categoria,
     Producto
 )
+from .forms import ProductoForm
 # Create your views here.
 def home(request):
 
@@ -47,7 +48,7 @@ def contacto(request):
 def nosotros(request):
     return render(request, 'nosotros.html')    
 
-def agregarProducto(request):
+def listarProductos(request):
     data = {}
     productos = Producto.objects.all()
 
@@ -63,3 +64,15 @@ def agregarProducto(request):
     data["pag"] = pag
 
     return render(request,'CRUD/listarProductos.html',data)
+
+def agregarProducto(request):
+    data = {}
+    if request.method == 'POST':
+        data['form'] = ProductoForm(request.POST or None)
+        if data['form'].is_valid():
+            data['form'].save()
+            return redirect('pyp:listaProductos')
+    else:
+        data['form'] = ProductoForm()
+
+    return render(request,'CRUD/agregarProducto.html',data)
