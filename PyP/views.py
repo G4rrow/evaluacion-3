@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import (
     Categoria,
     Producto
@@ -16,6 +17,7 @@ def index(request):
     productoF = []
     producto_fav = Producto.objects.filter(favorito = True)
     productos = Producto.objects.all()
+    print(len(productos))
     cont = 1
     list_temp = []
     for pf in producto_fav:
@@ -30,9 +32,9 @@ def index(request):
         if len(list_temp) > 0:
             productoF.append(list_temp)
 
-    data['productos'] = productos
+    data['productos'] = productos[:8]
     data["productoF"] = productoF
-
+    
     return render(request, 'index.html', data)
 
 def servicios(request):

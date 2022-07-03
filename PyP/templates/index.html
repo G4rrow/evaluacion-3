@@ -75,89 +75,20 @@
       </div>
       <!-- lista de productos -->
       <div class="productos-top">
-        
-        <div class="card" style="width: 18rem;">
-          <img src="{% static '/img/inicio/producto-top-1.webp'%}" class="card-img-top" alt="top-1">
-          <div class="card-body">
-            <h5 class="card-title">Leonardo Fresh Pato Adulto – 1.5kg</h5>
-            <p class="card-text">Comida de calidad.</p>
-            <p class="card-text precio">$28.990</p>
-            <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
+        {% for producto in productos%}
+          <div class="card" style="width: 18rem;">
+            <img src="{{ producto.imgProducto.url }}" class="card-img-top" alt="top-1">
+            <div class="card-body">
+              <h5 class="card-title">{{ producto.nombreProducto }}</h5>
+              <p class="card-text">{{ producto.categoria.nombreCategoria }}.</p>
+              <p class="card-text precio">${{ producto.precio }}</p>
+              <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
+            </div>
           </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img src="{% static '/img/inicio/producto-top-2.webp'%}" class="card-img-top" alt="top-2">
-          <div class="card-body">
-            <h5 class="card-title">NutraGold Indoor Kitten Cat 1kg</h5>
-            <p class="card-text">Comida de calidad.</p>
-            <p class="card-text precio">$8.990</p>
-            <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img src="{% static '/img/inicio/producto-top-3.webp'%}" class="card-img-top" alt="top-1">
-          <div class="card-body">
-            <h5 class="card-title">Fiprokill spray – 50 ml</h5>
-            <p class="card-text">Antiparacitario.</p>
-            <p class="card-text precio">$9.990</p>
-            <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img src="{% static '/img/inicio/producto-top-4.webp'%}" class="card-img-top" alt="top-1">
-          <div class="card-body">
-            <h5 class="card-title">Virbac HPM Canino Allergy Hypoallergy 3kg</h5>
-            <p class="card-text">Comida de calidad.</p>
-            <p class="card-text precio">$38.990</p>
-            <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img src="{% static '/img/inicio/producto-top-5.webp'%}" class="card-img-top" alt="top-1">
-          <div class="card-body">
-            <h5 class="card-title">Brit Lets Bite Meat Snacks Duck Fillets 80 gr</h5>
-            <p class="card-text">Premio.</p>
-            <p class="card-text precio">$4.490</p>
-            <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img src="{% static '/img/inicio/producto-top-6.webp'%}" class="card-img-top" alt="top-1">
-          <div class="card-body">
-            <h5 class="card-title">Arnés Anti Tirones Negro M</h5>
-            <p class="card-text">Arnes para perro.</p>
-            <p class="card-text precio">$5.540</p>
-            <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img src="{% static '/img/inicio/producto-top-7.webp'%}" class="card-img-top" alt="top-1">
-          <div class="card-body">
-            <h5 class="card-title">Cama Reversible Cafe L</h5>
-            <p class="card-text">Cama para perro.</p>
-            <p class="card-text precio">$54.990</p>
-            <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <img src="{% static '/img/inicio/producto-top-8.webp'%}" class="card-img-top" alt="top-1">
-          <div class="card-body">
-            <h5 class="card-title">Catit – Rascador Mariposa</h5>
-            <p class="card-text">Rascador para gato.</p>
-            <p class="card-text precio">$14.990</p>
-            <p class="btn-comprar"><a href="#" class="btn btn-success">Comprar</a></p>
-          </div>
-        </div>
-
+        {% endfor %}
       </div>
       <!-- Fin lista de productos -->
+
     </div>
     <!-- FIN CONTENIDO -->
 {% endblock %}
