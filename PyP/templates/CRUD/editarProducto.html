@@ -6,8 +6,8 @@
   <!-- CSS y titulo -->
   <link rel="stylesheet" href="{% static '/css/navbar-footer.css' %}">
   <link rel="stylesheet" href="{% static '/css/estilo-whatsapp.css' %}">
-  <link rel="stylesheet" href="{% static '/css/estilo-agregarProducto.css' %}">
-  <title>Agregar de producto</title>
+  <link rel="stylesheet" href="{% static '/css/estilo-editarProducto.css' %}">
+  <title>Editar producto</title>
 {% endblock %}
 
 {% block contenido %}
@@ -15,20 +15,25 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-12">
-                <h2>Agregar Producto</h2>
+                <h2>Editar Producto</h2>
                 <hr/>
             </div>
         </div>
         <div class="row mt-1 mb-3 justify-content-center">
             <div class="col-7">
-                <form action="{% url 'pyp:agregarProducto' %}" method="POST" enctype="multipart/form-data">
+                <form action="{% url 'pyp:editarProducto' form.idProducto.value %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-            
+
                     {% bootstrap_form form %}
 
+                    <div>
+                        <label for="imgProducto" class="form-label">Imagen del Producto</label>
+                        <img id="imgProducto" class="rounded mx-auto d-block" name="imgProducto" src="{{img.url}}" width="200" height="200">
+                    </div>
+
                     <div class="btn-group">
-                            <button type="submit" class="btn btn-success btn-lg text-center">
-                              <i class="fas fa-plus-square"></i> Añadir</button>
+                            <button type="submit" class="btn btn-warning btn-lg text-center">
+                              <i class="fa-solid fa-file-pen"></i> Editar</button>
                               <a href="{% url 'pyp:listaProductos' %}" type="button" class="btn btn-secondary rounded">
                               <i class="fas fa-undo"></i> Volver</a>
                     </div>

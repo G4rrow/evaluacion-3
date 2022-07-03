@@ -40,6 +40,24 @@ class EliminarProductoForm(forms.ModelForm):
         self.fields['favorito'].widget.attrs['disabled'] = True
 
 
+class EditarProductoForm(forms.ModelForm):
+    class Meta:
+        model = Producto
+        fields = ['idProducto','nombreProducto','precio','imgProducto','favorito','categoria']
+        labels={
+            'idProducto':'Codigo del Producto',
+            'nombreProducto':'Nombre del Producto',
+            'precio':'Precio del Producto',
+            'imgProducto':'Cambiar imagen del producto',
+            'favorito':'¿Es Favorito?',
+            'categoria':'Ingrese categoria',
+        }
 
+    def __init__(self, *args, **kwargs):
+        pk = kwargs.pop('pk',None)
+        produc = Producto.objects.get(idProducto=pk)
+        super(EditarProductoForm, self).__init__(*args, **kwargs)
+        
+        self.fields['favorito'].widget.attrs['checked'] = produc.favorito
 
 

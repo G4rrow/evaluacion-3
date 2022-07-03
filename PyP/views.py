@@ -5,7 +5,11 @@ from .models import (
     Categoria,
     Producto
 )
-from .forms import ProductoForm,EliminarProductoForm
+from .forms import (
+    ProductoForm,
+    EliminarProductoForm,
+    EditarProductoForm
+)
 # Create your views here.
 def home(request):
 
@@ -91,3 +95,19 @@ def eliminarProducto(request,pk):
         data['form'] = EliminarProductoForm(instance = producto, pk=pk)
 
     return render(request,'CRUD/eliminarProducto.html',data)
+
+def editarProducto(request,pk):
+    data = {}
+    producto = Producto.objects.get(idProducto = pk)
+    data["img"] = producto.imgProducto
+
+    if request.method == 'POST':
+
+        data['form'] = EditarProductoForm(request.POST,request.FILES or None, instance = producto, pk=pk)
+        if data['form'].is_valid():
+            data['form'].save()
+            return redirect('pyp:listaProductos')
+    else:
+        data['form'] = EditarProductoForm(instance = producto, pk=pk)
+
+    return render(request,'CRUD/editarProducto.html',data)
