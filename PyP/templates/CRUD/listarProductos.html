@@ -1,0 +1,85 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block css %}
+  <!-- CSS y titulo -->
+  <link rel="stylesheet" href="{% static '/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-whatsapp.css' %}">
+  <title>Listar de productos</title>
+{% endblock %}
+
+{% block contenido %}
+    
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            <div class="col-12">
+                <h2>Lista de productos</h2>
+                <hr/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Favorito</th>
+                        <th scope="col">Categoria</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for producto in pag%}
+                            <tr>
+                                <td>{{ producto.idProducto }}</td>
+                                <td>{{ producto.nombreProducto }}</td>
+                                <td>{{ producto.precio }}</td>
+                                <td>{{ producto.favorito }}</td>
+                                <td>{{ producto.categoria.nombreCategoria }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="Page navigation example">
+                    {% if pag.has_other_pages %}
+                        <ul class="pagination">
+                        {% if pag.has_previous %}
+                            <li class="page-item"><a href="?page={{ pag.previous_page_number }}" class="page-link">&laquo;</a></li>
+                         {% else %}
+                             <li class=" page-item disabled"><span class="page-link" >&laquo;</span></li>
+                        {% endif %}
+                        {% for i in pag.paginator.page_range %}
+                            {% if pag.number == i %}
+                                <li class="page-item active"><span class="page-link">{{ i }}</span></li>{#  <span class="sr-only">(current)</span></span></li> #}
+                            {% else %}
+                                 <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if pag.has_next %}
+                            <li class="page-item"><a href="?page={{ pag.next_page_number }}" class="page-link">&raquo;</a></li>
+                        {% else %}
+                            <li class="page-item disabled "><span class="page-link">&raquo;</span></li>
+                        {% endif %}
+                        </ul>
+                    {% endif %}
+                  </nav>          
+            </div>
+        </div>
+    </div>
+    <!--FIN Contenido-->
+
+{% endblock %}
+ 
+{% block js %}
+      <!-- JS BOOSTRAP -->
+      <script src="{% static '/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    
+{% endblock %}    

@@ -1,3 +1,4 @@
+from urllib import request
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import (
@@ -45,3 +46,20 @@ def contacto(request):
 
 def nosotros(request):
     return render(request, 'nosotros.html')    
+
+def agregarProducto(request):
+    data = {}
+    productos = Producto.objects.all()
+
+    page = request.GET.get('page')
+    paginator = Paginator(productos, 5)
+    try:
+        pag = paginator.page(page)
+    except PageNotAnInteger:
+        pag = paginator.page(1)
+    except EmptyPage:
+       pag = paginator.page(paginator.num_pages)
+    
+    data["pag"] = pag
+
+    return render(request,'CRUD/listarProductos.html',data)

@@ -25,7 +25,8 @@ div.logout{
     display: inline-block;
     text-decoration: none;
     color:red;
-    margin-left: 2px;
+    margin-left: 5px;
+    margin-top: 5px;
 }
 
 #logout > i{

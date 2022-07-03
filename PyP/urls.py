@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import servicios, home, index,nosotros,contacto
+from .views import *
 
 app_name = "pyp"
 urlpatterns = [
@@ -9,4 +9,6 @@ urlpatterns = [
     path('',index, name='index'),
     path('contacto/',contacto, name='contacto'),
     path('nosotros/',nosotros, name='nosotros'),
+
+    path('listar-productos',agregarProducto, name='listaProductos'),
 ]
