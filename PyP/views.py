@@ -5,7 +5,7 @@ from .models import (
     Categoria,
     Producto
 )
-from .forms import ProductoForm
+from .forms import ProductoForm,EliminarProductoForm
 # Create your views here.
 def home(request):
 
@@ -19,7 +19,6 @@ def index(request):
     productoF = []
     producto_fav = Producto.objects.filter(favorito = True)
     productos = Producto.objects.all()
-    print(len(productos))
     cont = 1
     list_temp = []
     for pf in producto_fav:
@@ -68,7 +67,7 @@ def listarProductos(request):
 def agregarProducto(request):
     data = {}
     if request.method == 'POST':
-        data['form'] = ProductoForm(request.POST or None)
+        data['form'] = ProductoForm(request.POST,request.FILES or None)
         if data['form'].is_valid():
             data['form'].save()
             return redirect('pyp:listaProductos')
@@ -76,3 +75,19 @@ def agregarProducto(request):
         data['form'] = ProductoForm()
 
     return render(request,'CRUD/agregarProducto.html',data)
+
+def eliminarProducto(request,pk):
+    data = {}
+    producto = Producto.objects.get(idProducto = pk)
+    data["img"] = producto.imgProducto
+
+    if request.method == 'POST':
+
+        data['form'] = EliminarProductoForm(request.POST,request.FILES or None, instance = producto, pk=pk)
+        if data['form'].is_valid():
+            producto.delete()
+            return redirect('pyp:listaProductos')
+    else:
+        data['form'] = EliminarProductoForm(instance = producto, pk=pk)
+
+    return render(request,'CRUD/eliminarProducto.html',data)

@@ -49,7 +49,7 @@
                                 <td>{{ producto.categoria.nombreCategoria }}</td>
                                 <td>
                                     <a class="btn btn-warning action" href="#"><i class="fa-solid fa-file-pen"></i></a>
-                                    <a class="btn btn-danger action" href="#"><i class="fa-solid fa-trash"></i></a>
+                                    <a class="btn btn-danger action" href="{% url 'pyp:eliminarProducto' producto.idProducto %}"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         {% endfor %}

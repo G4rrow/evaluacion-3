@@ -10,6 +10,7 @@ urlpatterns = [
     path('contacto/',contacto, name='contacto'),
     path('nosotros/',nosotros, name='nosotros'),
 
-    path('listar-productos',listarProductos, name='listaProductos'),
-    path('agregar-producto',agregarProducto, name='agregarProducto'),
+    path('listar-productos/',listarProductos, name='listaProductos'),
+    path('agregar-producto/',agregarProducto, name='agregarProducto'),
+    path('eliminar-producto/<pk>/',eliminarProducto, name='eliminarProducto'),
 ]
