@@ -46,7 +46,12 @@
                                 <td>{{ producto.idProducto }}</td>
                                 <td>{{ producto.nombreProducto }}</td>
                                 <td>{{ producto.precio }}</td>
-                                <td>{{ producto.favorito }}</td>
+                                {% if producto.favorito %}
+                                    <td><i class="fa-solid fa-star"></i></td>
+                                {% else %}
+                                    <td><i class="fa-regular fa-star"></i></td>
+                                {% endif %}
+                                
                                 <td>{{ producto.categoria.nombreCategoria }}</td>
                                 <td>{{ producto.descripcion }}</td>
 

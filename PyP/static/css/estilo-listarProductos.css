@@ -5,3 +5,7 @@ a.action > i{
 a.action > i:hover{
     transform: scale(1.2);
 }
+
+i.fa-star{
+    color:rgb(239 239 45 / 94%);
+}
