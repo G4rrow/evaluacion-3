@@ -9,11 +9,8 @@ urlpatterns = [
     path('',index, name='index'),
     path('contacto/',contacto, name='contacto'),
     path('nosotros/',nosotros, name='nosotros'),
-<<<<<<< HEAD
     path('descripcion/',descripcion, name='descripcion'),
 
-=======
->>>>>>> 1f5627a4bac4a852fb67da9e4237d8be6afd3c7e
     path('listar-productos/',listarProductos, name='listaProductos'),
 
     path('listar-productos-admin/',listarProductosAdmin, name='listaProductosAdmin'),

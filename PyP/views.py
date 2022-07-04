@@ -51,14 +51,10 @@ def contacto(request):
 def nosotros(request):
     return render(request, 'nosotros.html')    
 
-<<<<<<< HEAD
 def descripcion(request):
     return render(request, 'descripcion.html')        
 
-def listarProductos(request):
-=======
 def listarProductosAdmin(request):
->>>>>>> 1f5627a4bac4a852fb67da9e4237d8be6afd3c7e
     data = {}
     productos = Producto.objects.all()
 
