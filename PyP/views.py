@@ -10,6 +10,8 @@ from .forms import (
     EliminarProductoForm,
     EditarProductoForm
 )
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def home(request):
 
@@ -54,6 +56,7 @@ def nosotros(request):
 def descripcion(request):
     return render(request, 'descripcion.html')        
 
+@login_required(login_url = 'auth:login')
 def listarProductosAdmin(request):
     data = {}
     productos = Producto.objects.all()
@@ -71,18 +74,20 @@ def listarProductosAdmin(request):
 
     return render(request,'CRUD/listarProductos.html',data)
 
+@login_required(login_url = 'auth:login')
 def agregarProducto(request):
     data = {}
     if request.method == 'POST':
         data['form'] = ProductoForm(request.POST,request.FILES or None)
         if data['form'].is_valid():
             data['form'].save()
-            return redirect('pyp:listaProductos')
+            return redirect('pyp:listaProductosAdmin')
     else:
         data['form'] = ProductoForm()
 
     return render(request,'CRUD/agregarProducto.html',data)
 
+@login_required(login_url = 'auth:login')
 def eliminarProducto(request,pk):
     data = {}
     producto = Producto.objects.get(idProducto = pk)
@@ -93,12 +98,13 @@ def eliminarProducto(request,pk):
         data['form'] = EliminarProductoForm(request.POST,request.FILES or None, instance = producto, pk=pk)
         if data['form'].is_valid():
             producto.delete()
-            return redirect('pyp:listaProductos')
+            return redirect('pyp:listaProductosAdmin')
     else:
         data['form'] = EliminarProductoForm(instance = producto, pk=pk)
 
     return render(request,'CRUD/eliminarProducto.html',data)
 
+@login_required(login_url = 'auth:login')
 def editarProducto(request,pk):
     data = {}
     producto = Producto.objects.get(idProducto = pk)
@@ -109,7 +115,7 @@ def editarProducto(request,pk):
         data['form'] = EditarProductoForm(request.POST,request.FILES or None, instance = producto, pk=pk)
         if data['form'].is_valid():
             data['form'].save()
-            return redirect('pyp:listaProductos')
+            return redirect('pyp:listaProductosAdmin')
     else:
         data['form'] = EditarProductoForm(instance = producto, pk=pk)
 
