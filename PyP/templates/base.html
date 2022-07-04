@@ -39,6 +39,9 @@
             <a class="nav-link" aria-current="page" href="{% url 'pyp:index' %}">Inicio</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'pyp:listaProductos' %}">Ver Productos</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'pyp:servicios' %}">Servicios</a>
           </li>
           <li class="nav-item">
@@ -49,7 +52,7 @@
           </li>
           {% if user.is_authenticated and user.is_superuser%}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'pyp:listaProductos' %}">Administración</a>
+            <a class="nav-link" href="{% url 'pyp:listaProductosAdmin' %}">Administración</a>
           </li>
           {% endif %}
         </ul>
