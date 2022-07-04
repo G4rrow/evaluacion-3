@@ -1,0 +1,74 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block css %}
+  <!-- CSS y titulo -->
+  <link rel="stylesheet" href="{% static '/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-listaProductos.css' %}">
+  <title>Lista de Productos</title>
+{% endblock %}
+
+{% block contenido %}
+    <!--CONTENIDO-->
+    <div class="container">
+      <div class="titulo">
+        Listado de Productos
+      </div>
+      <!-- lista de productos -->
+      <div class="productos-top">
+        {% for producto in pag%}
+          <div class="card" style="width: 18rem;">
+            <img src="{{ producto.imgProducto.url }}" class="card-img-top" alt="top-1">
+            <div class="card-body">
+              <h5 class="card-title">{{ producto.nombreProducto }}</h5>
+              <p class="card-text">{{ producto.categoria.nombreCategoria }}.</p>
+              <p class="card-text precio">{{ producto.precio }}</p>
+              <p class="btn-comprar"><a href="#" class="btn btn-success">Ver</a></p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <!-- Fin lista de productos -->
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <nav aria-label="Page navigation example">
+            {% if pag.has_other_pages %}
+              <ul class="pagination">
+                {% if pag.has_previous %}
+                  <li class="page-item"><a href="?page={{ pag.previous_page_number }}" class="page-link">&laquo;</a></li>
+                {% else %}
+                  <li class=" page-item disabled"><span class="page-link" >&laquo;</span></li>
+                {% endif %}
+                {% for i in pag.paginator.page_range %}
+                  {% if pag.number == i %}
+                    <li class="page-item active"><span class="page-link">{{ i }}</span></li>
+                  {% else %}
+                    <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                {% if pag.has_next %}
+                  <li class="page-item"><a href="?page={{ pag.next_page_number }}" class="page-link">&raquo;</a></li>
+                {% else %}
+                  <li class="page-item disabled "><span class="page-link">&raquo;</span></li>
+                {% endif %}
+              </ul>
+            {% endif %}
+          </nav>          
+        </div>
+      </div>
+
+
+    </div>
+    <!-- FIN CONTENIDO -->
+{% endblock %}
+
+{% block js %}
+    <!-- JS BOOSTRAP -->
+    <script src="{% static '/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static '/js/lista-producto.js'%}"></script>
+{% endblock %}
+  

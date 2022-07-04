@@ -51,10 +51,14 @@ def contacto(request):
 def nosotros(request):
     return render(request, 'nosotros.html')    
 
+<<<<<<< HEAD
 def descripcion(request):
     return render(request, 'descripcion.html')        
 
 def listarProductos(request):
+=======
+def listarProductosAdmin(request):
+>>>>>>> 1f5627a4bac4a852fb67da9e4237d8be6afd3c7e
     data = {}
     productos = Producto.objects.all()
 
@@ -114,3 +118,20 @@ def editarProducto(request,pk):
         data['form'] = EditarProductoForm(instance = producto, pk=pk)
 
     return render(request,'CRUD/editarProducto.html',data)
+
+def listarProductos(request):
+    data = {}
+    productos = Producto.objects.all()
+
+    page = request.GET.get('page')
+    paginator = Paginator(productos, 8)
+    try:
+        pag = paginator.page(page)
+    except PageNotAnInteger:
+        pag = paginator.page(1)
+    except EmptyPage:
+       pag = paginator.page(paginator.num_pages)
+    
+    data["pag"] = pag
+
+    return render(request,'listaProductos.html',data)
