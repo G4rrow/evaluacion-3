@@ -1,3 +1,5 @@
+from calendar import day_abbr
+from operator import ge
 from urllib import request
 from django.shortcuts import redirect, render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -53,8 +55,11 @@ def contacto(request):
 def nosotros(request):
     return render(request, 'nosotros.html')    
 
-def descripcion(request):
-    return render(request, 'descripcion.html')        
+def descripcion(request,pk):
+    data = {}
+    producto = Producto.objects.get(idProducto = pk)
+    data["producto"] = producto
+    return render(request, 'descripcion.html',data)        
 
 @login_required(login_url = 'auth:login')
 def listarProductosAdmin(request):

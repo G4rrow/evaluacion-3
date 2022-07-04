@@ -25,7 +25,7 @@
               <h5 class="card-title">{{ producto.nombreProducto }}</h5>
               <p class="card-text">{{ producto.categoria.nombreCategoria }}.</p>
               <p class="card-text precio">{{ producto.precio }}</p>
-              <p class="btn-comprar"><a href="#" class="btn btn-success">Ver</a></p>
+              <p class="btn-comprar"><a href="{% url 'pyp:descripcion' producto.idProducto %}" class="btn btn-success">Ver</a></p>
             </div>
           </div>
         {% endfor %}
