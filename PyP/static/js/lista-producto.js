@@ -2,17 +2,11 @@ $(document).ready(function() {
 
     $(".btn-success").hover(
         function(){
-            $(this).append(" <i class='fa-solid fa-cart-shopping'></i>");
+            $(this).append(" <i class='fa-solid fa-circle-info'></i>");
         },function(){
-            $(".fa-cart-shopping").remove();
+            $(".fa-circle-info").remove();
         }
     );
-
-    $(".carousel-item").each(function (indexInArray) { 
-        if(indexInArray == 0){
-            $(this).addClass('active');
-        }
-    });
 
     $(".precio").each(function (index, element) {
         var text = $(this).html().split("").reverse().join("");
