@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block css %}
+  <!-- CSS y titulo -->
+  <link rel="stylesheet" href="{% static '/css/navbar-footer.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-whatsapp.css' %}">
+  <link rel="stylesheet" href="{% static '/css/estilo-nosotros.css' %}">
+  <title>Descripcion del producto</title>
+{% endblock %}
+
+{% block contenido %}  
+  <!--CONTENIDO --> 
+  <div class="container producto mb-5 mt-5">
+    <div class ="row">
+      <div class="col-lg-5 col-md-12 col-12">
+        <img class="img-fluid" src="{% static 'img/descripciontest/Delimix.jpeg'%}" alt="imgproducto">
+      </div>
+
+      <div class="col-lg-6 col-md-12 col-12 py-3">
+        <h6>Alimento para gatos</h6> <!--Nombre categoria-->
+        <h3>Purina Cat Chow - Delimix 8kg</h3> <!--Nombre Producto-->
+        <h2>$21.990</h2><!--Precio Producto-->
+        <button class="btn btn-success my-3"> Comprar </button>
+        <h4>Descripcion del producto</h4>
+        <p>Cat Chow® Delimix con Defense Plus es un alimento que ofrece los nutrientes que tu gato necesita para mantenerse fuerte y saludable. Ayuda a fortalecer las defensas naturales. Contiene 3 fuentes de proteína, que ayudan a mantener su vitalidad. Ademas de: </p>
+        <p>
+          <ol>
+            <li>Ayudar a fortalecer las defensas naturales.</li>
+            <li>Contiene 3 fuentes de proteína, que ayudan a mantener su vitalidad.</li>
+            <li>Vitamina A: Ayuda a mantener una visión saludable.</li>
+            <li>Vitamina C: Ayuda a combatir los radicales libres.</li>
+            <li>Vitamina E: Esencial para la respuesta inmune del organismo.</li>
+            <li>Selenio: Actúa conjuntamente con la Vitamina E como antioxidante celular.</li>
+            <li>Zinc: Contribuye a tener una piel y pelo sano.</li>
+          </ol>
+
+        </p>
+      </div>
+
+    </div>
+
+  </div>  
+  <!--FIN CONTENIDO -->
+{% endblock %}
+
+{% block js %}
+  <!-- JS BOOSTRAP -->
+  <script src="{% static '/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+{% endblock %}

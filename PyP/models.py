@@ -17,6 +17,7 @@ class Producto(models.Model):
     precio = models.IntegerField(verbose_name="Precio del producto")
     favorito = models.BooleanField(verbose_name="Favoritio", default=False, blank=False, null=False)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    descripcion = models.TextField(verbose_name="descripcion", default="")
 
     def __str__(self):
         return self.nombreProducto

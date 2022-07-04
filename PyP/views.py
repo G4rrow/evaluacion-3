@@ -13,9 +13,9 @@ from .forms import (
 # Create your views here.
 def home(request):
 
-    Categorias=Categoria.objects.all()
+    Productos=Producto.objects.all()
     data = {}
-    data["categorias"]=Categorias
+    data["productos"]=Productos
     return render(request, 'home.html', data)
 
 def index(request):
@@ -50,6 +50,9 @@ def contacto(request):
 
 def nosotros(request):
     return render(request, 'nosotros.html')    
+
+def descripcion(request):
+    return render(request, 'descripcion.html')        
 
 def listarProductos(request):
     data = {}

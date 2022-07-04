@@ -35,6 +35,7 @@
                         <th>Precio</thscope=>
                         <th>Favorito</th>
                         <th>Categoria</th>
+                        <th>Descripcion</th>
                         <th>Opciones</th>
                         <th>
                       </tr>
@@ -47,6 +48,8 @@
                                 <td>{{ producto.precio }}</td>
                                 <td>{{ producto.favorito }}</td>
                                 <td>{{ producto.categoria.nombreCategoria }}</td>
+                                <td>{{ producto.descripcion }}</td>
+
                                 <td>
                                     <a class="btn btn-warning action"  href="{% url 'pyp:editarProducto' producto.idProducto %}"><i class="fa-solid fa-file-pen"></i></a>
                                     <a class="btn btn-danger action" href="{% url 'pyp:eliminarProducto' producto.idProducto %}"><i class="fa-solid fa-trash"></i></a>
